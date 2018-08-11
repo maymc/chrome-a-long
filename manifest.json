@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome-A-Long",
+  "description": "Parses text from website and turns it into a song",
+  "version": 2,
+  "author": "Nick, Sarah, Romeo, May",
+  "content_scripts": [
+    {
+      "css": [
+        "main.css"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "matches": [
+        "*://*/*"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "extensionIcon.png"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}
