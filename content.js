@@ -18,3 +18,5 @@ wordArr[2].forEach(elem => {
     otherArr.push(elem.split(',').join(" "));
 })
 console.log("other Array", otherArr)
+=======
+console.log("Testing"); //romeo
