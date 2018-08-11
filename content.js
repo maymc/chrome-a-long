@@ -8,13 +8,17 @@ for (let i = 0; i < pElems.length; i++) {
     let elem = pElems[i];
     // console.log("working?")
     console.log("P Elem", elem)
-   wordArr.push((elem.innerText).split(' ')) 
+    wordArr.push((elem.innerText).split(' ')) 
+     
 }
 console.log(wordArr);
 
 let otherArr = [];
 wordArr[2].forEach(elem => {
     
-    otherArr.push(elem.split(',').join(" "));
+    otherArr.push((elem.split(',')).join(" "));
 })
-console.log("other Array", otherArr)
+
+let tryingThis = otherArr.push(wordArr[2].join(" "));
+console.log("other Array", tryingThis)
+console.log(wordArr[2])
