@@ -1,5 +1,7 @@
 console.log("Sanity check");
 
+let WordPOS = require('wordpos'), wordpos = new WordPOS();
+
 //Our array of arrays
 let wordArr = [];
 
@@ -21,3 +23,7 @@ for (let j = 0; j < wordArr.length; j++) {
     masterArr = masterArr.concat(wordArr[j]);       // Joining all of the arrays into one master array
 }
 console.log("Master", masterArr);
+
+wordpos.isAdjective(masterArr, function (result) {
+    console.log("should be adjectives", result)
+})
