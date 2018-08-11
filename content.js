@@ -21,3 +21,4 @@ for (let j = 0; j < wordArr.length; j++) {
     masterArr = masterArr.concat(wordArr[j]);       // Joining all of the arrays into one master array
 }
 console.log("Master", masterArr);
+
