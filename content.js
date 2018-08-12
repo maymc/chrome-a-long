@@ -102,16 +102,19 @@ while (lyrics.length <= 37) {
   // console.log("random Index: adj: " + randomAdjIndex + " nouns: " + randomNounIndex + " verbs: " + randomVerbIndex);
 
   //Noun - Verb - Adj
-  lyrics.push(arrOfNouns[randomNounIndex]);
-  // arrOfNouns.splice(randomNounIndex, 1);
+  if (arrOfNouns[randomNounIndex] !== undefined && arrOfAdjectives[randomAdjIndex] !== undefined && arrOfVerbs[randomVerbIndex] !== undefined) {
+    lyrics.push(arrOfNouns[randomNounIndex]);
+    arrOfNouns.splice(randomNounIndex, 1);
 
-  lyrics.push(arrOfVerbs[randomVerbIndex]);
-  // arrOfVerbs.splice(randomVerbIndex, 1);
+    lyrics.push(arrOfVerbs[randomVerbIndex]);
+    arrOfVerbs.splice(randomVerbIndex, 1);
 
-  lyrics.push(arrOfAdjectives[randomAdjIndex]);
-  // arrOfAdjectives.splice(randomAdjIndex, 1);
+    lyrics.push(arrOfAdjectives[randomAdjIndex]);
+    arrOfAdjectives.splice(randomAdjIndex, 1);
+  }
 }
 console.log("Lyrics:\n", lyrics);
+words.innerHTML = lyrics;
 
 
 // Voice API
@@ -125,8 +128,8 @@ for (var k = 0; k < lyrics.length; k++) {
   var voices = speechSynthesis.getVoices();
   msg.volume = 10;
   msg.rate = 2;
-  msg.pitch = 6;
-  msg.lang = "en-UK";
+  msg.pitch = 3;
+  msg.lang = "en-AU";
   msg.name = "Karen";
   msg.name = "Google US English";
   msg.voiceURI = "Google US English"
