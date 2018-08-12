@@ -20,7 +20,6 @@ let pElems = document.getElementsByTagName("p");
 
 console.log("Master", masterArr);
 
-
 // words database //
 
 const wordsModule = (function () {
