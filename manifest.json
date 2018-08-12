@@ -6,6 +6,7 @@
   "author": "Nick, Sarah, Romeo, May",
   "content_scripts": [
     {
+<<<<<<< HEAD
       "css": [
         "main.css"
       ],
@@ -15,6 +16,11 @@
       "matches": [
         "*://*/*"
       ]
+=======
+      "css": ["main.css"],
+      "js": ["content.js"], 
+      "matches": ["*://*/*"]
+>>>>>>> master
     }
   ],
   "browser_action": {
