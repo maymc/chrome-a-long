@@ -1,5 +1,6 @@
 console.log("Sanity check");
 
+
 //Our array of arrays
 let wordArr = [];
 let masterArr = [];
