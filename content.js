@@ -82,7 +82,7 @@ const arrOfVerbs = masterArr.filter(word => {
 console.log("should be array of verbs", arrOfVerbs);
 
 //Create Lyrics
-let lyrics = [];
+let lyrics = ["The"];
 
 //Get random adjectives, verbs, nouns
 let adjArrLength = arrOfAdjectives.length;
@@ -102,13 +102,31 @@ while (lyrics.length <= 10) {
 
     //Noun - Verb - Adj
     lyrics.push(arrOfNouns[randomNounIndex]);
-    arrOfNouns.splice(randomNounIndex, 1);
+    // arrOfNouns.splice(randomNounIndex, 1);
 
     lyrics.push(arrOfVerbs[randomVerbIndex]);
-    arrOfVerbs.splice(randomVerbIndex, 1);
+    // arrOfVerbs.splice(randomVerbIndex, 1);
 
     lyrics.push(arrOfAdjectives[randomAdjIndex]);
-    arrOfAdjectives.splice(randomAdjIndex, 1);
+    // arrOfAdjectives.splice(randomAdjIndex, 1);
   }
 }
 console.log("Lyrics:\n", lyrics);
+
+for (var k = 0; k < lyrics.length; k++) {
+  var msg = new SpeechSynthesisUtterance();   //Web Speech API
+  msg.text = lyrics[k];
+
+  console.log(lyrics[k]);
+
+  // console.log(msg.text);
+    var voices = speechSynthesis.getVoices();
+    msg.volume = 8;
+    msg.rate = 1;
+    msg.pitch = 2;
+    msg.lang = "en-US";
+    msg.name = "Google US English";
+    msg.voiceURI = "Google US English"
+
+  window.speechSynthesis.speak(msg);
+}
