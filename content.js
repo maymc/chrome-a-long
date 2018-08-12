@@ -1,43 +1,30 @@
 console.log("Sanity check");
 
-let WordPOS = require('wordpos'), wordpos = new WordPOS();
-
-//Our array of arrays
+// Our array of arrays of words 
 let wordArr = [];
+let masterArr = [];
 
+// Grab all "p" elements
 let pElems = document.getElementsByTagName("p");
-console.log("someting?");
-for (let i = 0; i < pElems.length; i++) {
-  let elem = pElems[i];
-  // console.log("working?")
-  console.log("P Elem", elem);
-  wordArr.push(elem.innerText.split(" "));
-  let pElems = document.getElementsByTagName("p");
-  console.log("someting?");
 
-  for (let i = 0; i < pElems.length; i++) {
-    // Loops through all of the "p"  elems
+  for (let i = 0; i < pElems.length; i++) {          // Loops through all of the "p"  elems
     let elem = pElems[i];
-    // console.log("working?")
     console.log("P Elem", elem);
     wordArr.push(elem.innerText.split(" "));
   }
-  console.log(wordArr); // Logs an array of arrays of words from each pElem[i]
-
-  let otherArr = [];
-  wordArr[2].forEach(elem => {
-    otherArr.push(elem.split(",").join(" "));
-  });
-  console.log("other Array", otherArr);
-  //Our master array of every word
-  let masterArr = [];
+  console.log(wordArr);                             // Logs an array of arrays of words from each pElem[i]
 
   for (let j = 0; j < wordArr.length; j++) {
-    masterArr = masterArr.concat(wordArr[j]); // Joining all of the arrays into one master array
+    masterArr = masterArr.concat(wordArr[j]);       // Joining all of the arrays into one master array
   }
-}
+
 console.log("Master", masterArr);
 
-wordpos.isAdjective(masterArr, function (result) {
-    console.log("should be adjectives", result)
-})
+let longWords = masterArr.filter(word => word.length > 8);
+console.log("words longer than 8", longWords);
+
+// let adjectives = masterArr.filter(word => {
+//     if (adjectivearray.includes(word)) {
+//         return word
+//     }
+// });
