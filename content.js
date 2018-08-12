@@ -112,4 +112,4 @@ while (lyrics.length <= 10) {
     arrOfAdjectives.splice(randomAdjIndex, 1);
   }
 }
-console.log("Lyrics:\n", lyrics);
+console.log("Lyrics:\n", lyrics)
