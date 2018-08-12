@@ -6,9 +6,16 @@
   "author": "Nick, Sarah, Romeo, May",
   "content_scripts": [
     {
-      "css": ["main.css"],
-      "js": ["content.js"],
-      "matches": ["*://*/*"]
+      "css": [
+        "main.css"
+      ],
+      "js": [
+        "content.js",
+        "adjectives.js"
+      ],
+      "matches": [
+        "*://*/*"
+      ]
     }
   ],
   "browser_action": {
@@ -23,5 +30,7 @@
       "description": "Opens index.html"
     }
   },
-  "permissions": ["activeTab"]
+  "permissions": [
+    "activeTab"
+  ]
 }
