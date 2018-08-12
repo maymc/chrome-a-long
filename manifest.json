@@ -7,7 +7,7 @@
   "content_scripts": [
     {
       "css": ["main.css"],
-      "js": ["content.js"],
+      "js": ["content.js"], 
       "matches": ["*://*/*"]
     }
   ],
@@ -23,5 +23,7 @@
       "description": "Opens index.html"
     }
   },
-  "permissions": ["activeTab"]
+  "permissions": [
+    "activeTab"
+  ]
 }
