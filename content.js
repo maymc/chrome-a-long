@@ -131,11 +131,7 @@ for (var k = 0; k < lyrics.length; k++) {
   var msg = new SpeechSynthesisUtterance();   //Web Speech API
   msg.text = lyrics[k];
 
-// playL.addEventListener("click", function playMeASong() {
-//   console.log("clicking that butt")
-// //   for (var k = 0; k < lyrics.length; k++) {
-// //     var msg = new SpeechSynthesisUtterance();   //Web Speech API
-// //     msg.text = lyrics[k];
+  console.log(lyrics[k]);
 
   // console.log(msg.text);
   var voices = speechSynthesis.getVoices();
