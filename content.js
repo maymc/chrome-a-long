@@ -113,6 +113,7 @@ while (lyrics.length <= 10) {
 }
 console.log("Lyrics:\n", lyrics);
 
+// Voice API
 for (var k = 0; k < lyrics.length; k++) {
   var msg = new SpeechSynthesisUtterance();   //Web Speech API
   msg.text = lyrics[k];
