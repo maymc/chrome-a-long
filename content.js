@@ -89,27 +89,22 @@ let adjArrLength = arrOfAdjectives.length;
 let nounsArrLength = arrOfNouns.length;
 let verbsArrLength = arrOfVerbs.length;
 console.log("Lengths: adj: " + adjArrLength + " nouns: " + nounsArrLength + " verbs: " + verbsArrLength);
-while (lyrics.length <= 10) {
+while (lyrics.length <= 20) {
 
-  if (adjArrLength === 0 || nounsArrLength === 0 || verbsArrLength === 0) {
+  let randomNounIndex = Math.floor(Math.random() * nounsArrLength);
+  let randomVerbIndex = Math.floor(Math.random() * verbsArrLength);
+  let randomAdjIndex = Math.floor(Math.random() * adjArrLength);
+  // console.log("random Index: adj: " + randomAdjIndex + " nouns: " + randomNounIndex + " verbs: " + randomVerbIndex);
 
-  }
-  else {
-    let randomNounIndex = Math.floor(Math.random() * nounsArrLength);
-    let randomVerbIndex = Math.floor(Math.random() * verbsArrLength);
-    let randomAdjIndex = Math.floor(Math.random() * adjArrLength);
-    // console.log("random Index: adj: " + randomAdjIndex + " nouns: " + randomNounIndex + " verbs: " + randomVerbIndex);
+  //Noun - Verb - Adj
+  lyrics.push(arrOfNouns[randomNounIndex]);
+  // arrOfNouns.splice(randomNounIndex, 1);
 
-    //Noun - Verb - Adj
-    lyrics.push(arrOfNouns[randomNounIndex]);
-    // arrOfNouns.splice(randomNounIndex, 1);
+  lyrics.push(arrOfVerbs[randomVerbIndex]);
+  // arrOfVerbs.splice(randomVerbIndex, 1);
 
-    lyrics.push(arrOfVerbs[randomVerbIndex]);
-    // arrOfVerbs.splice(randomVerbIndex, 1);
-
-    lyrics.push(arrOfAdjectives[randomAdjIndex]);
-    // arrOfAdjectives.splice(randomAdjIndex, 1);
-  }
+  lyrics.push(arrOfAdjectives[randomAdjIndex]);
+  // arrOfAdjectives.splice(randomAdjIndex, 1);
 }
 console.log("Lyrics:\n", lyrics);
 
@@ -121,13 +116,13 @@ for (var k = 0; k < lyrics.length; k++) {
   console.log(lyrics[k]);
 
   // console.log(msg.text);
-    var voices = speechSynthesis.getVoices();
-    msg.volume = 8;
-    msg.rate = 1;
-    msg.pitch = 2;
-    msg.lang = "en-US";
-    msg.name = "Google US English";
-    msg.voiceURI = "Google US English"
+  var voices = speechSynthesis.getVoices();
+  msg.volume = 8;
+  msg.rate = 2;
+  msg.pitch = 3;
+  msg.lang = "en-US";
+  msg.name = "Google US English";
+  msg.voiceURI = "Google US English"
 
   window.speechSynthesis.speak(msg);
 }
