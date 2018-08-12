@@ -1,5 +1,17 @@
 console.log("Sanity check");
 
+// let myAudio = document.getElementById("music");
+// myAudio.play();
+
+// window.onload = function () {
+//   myAudio = document.getElementsByTagName("audio");
+// }
+
+
+
+// document.write('<audio id="player" src="/assets/guitar-riff.mp3" >');
+// document.getElementById('player').play();
+
 //Our array of arrays
 let wordArr = [];
 let masterArr = [];
@@ -89,7 +101,7 @@ let adjArrLength = arrOfAdjectives.length;
 let nounsArrLength = arrOfNouns.length;
 let verbsArrLength = arrOfVerbs.length;
 console.log("Lengths: adj: " + adjArrLength + " nouns: " + nounsArrLength + " verbs: " + verbsArrLength);
-while (lyrics.length <= 10) {
+while (lyrics.length <= 100) {
 
   if (adjArrLength === 0 || nounsArrLength === 0 || verbsArrLength === 0) {
 
@@ -113,14 +125,36 @@ while (lyrics.length <= 10) {
 }
 console.log("Lyrics:\n", lyrics);
 
-// Voice API
-for (var k = 0; k < lyrics.length; k++) {
-  var msg = new SpeechSynthesisUtterance();   //Web Speech API
-  msg.text = lyrics[k];
+// let playLyrics = document.getElementById("readLyrics");
 
-  console.log(lyrics[k]);
+// playL.addEventListener("click", function playMeASong() {
+//   console.log("clicking that butt")
+// //   for (var k = 0; k < lyrics.length; k++) {
+// //     var msg = new SpeechSynthesisUtterance();   //Web Speech API
+// //     msg.text = lyrics[k];
 
-  // console.log(msg.text);
+// //     console.log(lyrics[k]);
+
+// //     // console.log(msg.text);
+// //     var voices = speechSynthesis.getVoices();
+// //     msg.volume = 8;
+// //     msg.rate = 1;
+// //     msg.pitch = 2;
+// //     msg.lang = "en-US";
+// //     msg.name = "Google US English";
+// //     msg.voiceURI = "Google US English"
+
+// //     window.speechSynthesis.speak(msg);
+// //   }
+// })
+  // Voice API
+  for (var k = 0; k < lyrics.length; k++) {
+    var msg = new SpeechSynthesisUtterance();   //Web Speech API
+    msg.text = lyrics[k];
+
+    console.log(lyrics[k]);
+
+    // console.log(msg.text);
     var voices = speechSynthesis.getVoices();
     msg.volume = 8;
     msg.rate = 1;
@@ -129,5 +163,5 @@ for (var k = 0; k < lyrics.length; k++) {
     msg.name = "Google US English";
     msg.voiceURI = "Google US English"
 
-  window.speechSynthesis.speak(msg);
-}
+    window.speechSynthesis.speak(msg);
+  }
