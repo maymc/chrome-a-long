@@ -7,16 +7,16 @@ let masterArr = [];
 // Grab all "p" elements
 let pElems = document.getElementsByTagName("p");
 
-  for (let i = 0; i < pElems.length; i++) {          // Loops through all of the "p"  elems
-    let elem = pElems[i];
-    console.log("P Elem", elem);
-    wordArr.push(elem.innerText.split(" "));
-  }
-  console.log(wordArr);                             // Logs an array of arrays of words from each pElem[i]
+for (let i = 0; i < pElems.length; i++) {          // Loops through all of the "p"  elems
+  let elem = pElems[i];
+  console.log("P Elem", elem);
+  wordArr.push(elem.innerText.split(" "));
+}
+console.log(wordArr);                             // Logs an array of arrays of words from each pElem[i]
 
-  for (let j = 0; j < wordArr.length; j++) {
-    masterArr = masterArr.concat(wordArr[j]);       // Joining all of the arrays into one master array
-  }
+for (let j = 0; j < wordArr.length; j++) {
+  masterArr = masterArr.concat(wordArr[j]);       // Joining all of the arrays into one master array
+}
 
 console.log("Master", masterArr);
 
@@ -35,28 +35,28 @@ const wordsModule = (function () {
   // Filter through Adjectives 
   const arrOfAdjectives = masterArr.filter(word => {
     if (adjectives.includes(word)) {
-        return word
+      return word
     }
   });
-    console.log("should be array of adjectives", arrOfAdjectives);    
+  console.log("should be array of adjectives", arrOfAdjectives);
 
-    //Filter through Nouns
-    const arrOfNouns = masterArr.filter(word => {
-        if ((nouns1.includes(word)) || (nouns2.includes(word))) {
-            return word
-        }
-    })
-    console.log("should be array of nouns", arrOfNouns)
+  //Filter through Nouns
+  const arrOfNouns = masterArr.filter(word => {
+    if ((nouns1.includes(word)) || (nouns2.includes(word))) {
+      return word
+    }
+  })
+  console.log("should be array of nouns", arrOfNouns)
 
-    //Filter through Verbs
-    const arrOfVerbs = masterArr.filter(word => {
-        if (verbs.includes(word)) {
-            return word
-        }
-    })
-    console.log("should be array of verbs", arrOfVerbs)
+  //Filter through Verbs
+  const arrOfVerbs = masterArr.filter(word => {
+    if (verbs.includes(word)) {
+      return word
+    }
+  })
+  console.log("should be array of verbs", arrOfVerbs)
 
-    
+
   function getAdjectives() {
     return adjectives;
   }
