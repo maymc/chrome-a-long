@@ -1,4 +1,5 @@
 console.log("Sanity check");
+<<<<<<< HEAD
 
 //Our array of arrays
 let wordArr = [];
@@ -35,3 +36,6 @@ for (let i = 0; i < pElems.length; i++) {
   }
 }
 console.log("Master", masterArr);
+=======
+console.log("testing"); //romeo
+>>>>>>> 18b4eb43186e7bbe5c830e732656bd9e275bd591
